@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高自主性需求自我評估</title>
+    <style>
+        body { font-family: 'Arial', 'Microsoft JhengHei', sans-serif; line-height: 1.6; padding: 20px; background-color: #f4f4f9; }
+        .container { max-width: 800px; margin: auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #333; }
+        h2 { border-bottom: 2px solid #ccc; padding-bottom: 10px; margin-top: 25px; color: #555; }
+        .question-group { margin-bottom: 20px; padding: 15px; border: 1px solid #eee; border-radius: 8px; background-color: #fafafa; }
+        .question-text { font-weight: bold; margin-bottom: 10px; color: #2a6496; }
+        .options label { margin-right: 15px; cursor: pointer; }
+        .options input[type="radio"] { margin-right: 5px; }
+        button { display: block; width: 100%; padding: 15px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-size: 1.1em; cursor: pointer; transition: background-color 0.3s; margin-top: 30px; }
+        button:hover { background-color: #0056b3; }
+        #result-area { margin-top: 30px; padding: 20px; border: 2px dashed #007bff; border-radius: 10px; background-color: #e9f7ff; text-align: center; font-size: 1.2em; display: none; }
+        .score { font-size: 2em; color: #d9534f; font-weight: bold; margin-bottom: 10px; }
+        .reverse-note { color: #d9534f; font-size: 0.9em; margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>高自主性需求自我評估</h1>
+    <p style="text-align: center; font-style: italic; color: #666;">請根據您實際的生活感受和行為，在 1 到 5 分之間選擇最符合您的程度。</p>
+    
+    <h2>評分標準</h2>
+    <p>1 = 完全不同意, 2 = 不太同意, 3 = 部分同意, 4 = 大致同意, 5 = 完全同意</p>
+
+    <form id="autonomy-quiz">
+        <div class="question-group" data-q="1">
+            <div class="question-text">A1. 我難以長期忍受一成不變的生活或工作環境，會很快感到厭倦和心靈枯竭。</div>
+            <div class="options">
+                <label><input type="radio" name="q1" value="1" required> 1</label>
+                <label><input type="radio" name="q1" value="2"> 2</label>
+                <label><input type="radio" name="q1" value="3"> 3</label>
+                <label><input type="radio" name="q1" value="4"> 4</label>
+                <label><input type="radio" name="q1" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group" data-q="2">
+            <div class="question-text">A2. 只要感覺自己的工作方式被微管理或過度干涉，我的積極性和效率會大幅下降。</div>
+            <div class="options">
+                <label><input type="radio" name="q2" value="1" required> 1</label>
+                <label><input type="radio" name="q2" value="2"> 2</label>
+                <label><input type="radio" name="q2" value="3"> 3</label>
+                <label><input type="radio" name="q2" value="4"> 4</label>
+                <label><input type="radio" name="q2" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group" data-q="3">
+            <div class="question-text">A3. 我極度厭惡處理那些缺乏意義、機械性、重複性的事務。</div>
+            <div class="options">
+                <label><input type="radio" name="q3" value="1" required> 1</label>
+                <label><input type="radio" name="q3" value="2"> 2</label>
+                <label><input type="radio" name="q3" value="3"> 3</label>
+                <label><input type="radio" name="q3" value="4"> 4</label>
+                <label><input type="radio" name="q3" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group" data-q="4">
+            <div class="question-text">A4. 我經常主動尋求新的知識、技能或環境，並偏愛充滿變化和探索的挑戰。</div>
+            <div class="options">
+                <label><input type="radio" name="q4" value="1" required> 1</label>
+                <label><input type="radio" name="q4" value="2"> 2</label>
+                <label><input type="radio" name="q4" value="3"> 3</label>
+                <label><input type="radio" name="q4" value="4"> 4</label>
+                <label><input type="radio" name="q4" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group" data-q="5">
+            <div class="question-text">A5. 當我感覺自己被某個環境「困住」或「無法抽身」時，我會立即產生強烈的焦慮和想逃離的衝動。</div>
+            <div class="options">
+                <label><input type="radio" name="q5" value="1" required> 1</label>
+                <label><input type="radio" name="q5" value="2"> 2</label>
+                <label><input type="radio" name="q5" value="3"> 3</label>
+                <label><input type="radio" name="q5" value="4"> 4</label>
+                <label><input type="radio" name="q5" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group" data-q="6">
+            <div class="question-text">A6. 即使兩個選項的結果一樣好，我也非常重視能由自己決定、自己擁有選擇權的過程。</div>
+            <div class="options">
+                <label><input type="radio" name="q6" value="1" required> 1</label>
+                <label><input type="radio" name="q6" value="2"> 2</label>
+                <label><input type="radio" name="q6" value="3"> 3</label>
+                <label><input type="radio" name="q6" value="4"> 4</label>
+                <label><input type="radio" name="q6" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group" data-q="7">
+            <div class="question-text">A7. 我對任何形式的控制、壓迫或不合理規定都特別敏感，並會產生強烈的抗拒感。</div>
+            <div class="options">
+                <label><input type="radio" name="q7" value="1" required> 1</label>
+                <label><input type="radio" name="q7" value="2"> 2</label>
+                <label><input type="radio" name="q7" value="3"> 3</label>
+                <label><input type="radio" name="q7" value="4"> 4</label>
+                <label><input type="radio" name="q7" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group" data-q="8">
+            <div class="question-text">A8. 我傾向於做自己認為有價值、有興趣的事，而不是單純為了高薪或外在獎勵而行動。</div>
+            <div class="options">
+                <label><input type="radio" name="q8" value="1" required> 1</label>
+                <label><input type="radio" name="q8" value="2"> 2</label>
+                <label><input type="radio" name="q8" value="3"> 3</label>
+                <label><input type="radio" name="q8" value="4"> 4</label>
+                <label><input type="radio" name="q8" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group" data-q="9">
+            <div class="question-text">A9. 為了穩定的薪水和明確的制度，我可以長期忍受一個缺乏個人彈性的環境。</div>
+            <div class="reverse-note">注意：此題為反向計分題！選擇高分表示**低**自主性需求。</div>
+            <div class="options">
+                <label><input type="radio" name="q9" value="1" required> 1</label>
+                <label><input type="radio" name="q9" value="2"> 2</label>
+                <label><input type="radio" name="q9" value="3"> 3</label>
+                <label><input type="radio" name="q9" value="4"> 4</label>
+                <label><input type="radio" name="q9" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="question-group" data-q="10">
+            <div class="question-text">A10. 自由對我來說不是一種享受或奢侈品，而是維持我心理健康運作的必需品。</div>
+            <div class="options">
+                <label><input type="radio" name="q10" value="1" required> 1</label>
+                <label><input type="radio" name="q10" value="2"> 2</label>
+                <label><input type="radio" name="q10" value="3"> 3</label>
+                <label><input type="radio" name="q10" value="4"> 4</label>
+                <label><input type="radio" name="q10" value="5"> 5</label>
+            </div>
+        </div>
+        
+        <button type="submit">計算我的高自主性分數</button>
+    </form>
+
+    <div id="result-area" style="display: none;">
+        <h2>您的評估結果</h2>
+        <div class="score" id="final-score"></div>
+        <div id="score-interpretation"></div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('autonomy-quiz').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        let totalScore = 0;
+        let allAnswered = true;
+        const questions = 10;
+        
+        for (let i = 1; i <= questions; i++) {
+            const qName = 'q' + i;
+            const selectedOption = document.querySelector('input[name="' + qName + '"]:checked');
+            
+            if (!selectedOption) {
+                allAnswered = false;
+                break;
+            }
+            
+            let score = parseInt(selectedOption.value);
+            
+            // A9 題進行反向計分邏輯 (5 -> 1, 4 -> 2, 3 -> 3, 2 -> 4, 1 -> 5)
+            if (i === 9) {
+                score = 6 - score;
+            }
+            
+            totalScore += score;
+        }
+        
+        if (!allAnswered) {
+            alert('請回答所有問題後再計算分數。');
+            return;
+        }
+        
+        // 顯示結果
+        document.getElementById('final-score').textContent = `您的總分是：${totalScore} / 50`;
+        const interpretationArea = document.getElementById('score-interpretation');
+        let interpretationText = '';
+
+        if (totalScore >= 40) {
+            interpretationText = `
+                <h3>👑 高度自主性需求</h3>
+                <p>您極有可能屬於「高自主性人格」。您的核心驅動力是自主性。您在任何缺乏彈性、過度控制或重複性高的環境中，將面臨極高的耗竭（Burnout）風險。</p>
+                <p><strong>建議：</strong> 選擇能提供最大程度的決定權、創造空間和變動性的職業與生活模式。</p>
+            `;
+        } else if (totalScore >= 30) {
+            interpretationText = `
+                <h3>📈 中度偏高自主性需求</h3>
+                <p>您重視自由和選擇權，但為了特定的目標（如安全感、高報酬），您可以在一定程度上接受限制。您會在缺乏自主性的環境中感到不適，但可能不會立即崩潰。</p>
+                <p><strong>建議：</strong> 您可以在較為規範的制度下工作，但需要爭取一塊獨立負責的空間，或確保工作中有足夠的變動性或學習機會。</p>
+            `;
+        } else {
+            interpretationText = `
+                <h3>⚖️ 平衡或中度自主性需求</h3>
+                <p>您和大多數人一樣，喜歡自由，但更偏愛一個能提供穩定、明確框架和安全感的環境。您能夠在既有的制度下感到滿足。</p>
+                <p><strong>建議：</strong> 您適合結構清晰、流程明確的環境，您會因為可預期性而感到安全和舒適。</p>
+            `;
+        }
+
+        interpretationArea.innerHTML = interpretationText;
+        document.getElementById('result-area').style.display = 'block';
+        document.getElementById('result-area').scrollIntoView({ behavior: 'smooth' });
+    });
+</script>
+
+</body>
+</html>
